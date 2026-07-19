@@ -1,6 +1,6 @@
 const vatRate = 0.07;
 
-double calcTotal(int price,int qty,double? discount){
+double calcTotal({required  price,required qty,double? discount}){
   if (discount == null){
     return (price * qty) * (1 + vatRate);
   }else{
@@ -11,7 +11,7 @@ double calcTotal(int price,int qty,double? discount){
 
 void main(){
   
-  String shopname = "Dart Cafe"; 
+  final String shopname = "Dart Cafe"; 
   List<String> categories  = ["เครื่องดืม","ของคาว","ของหวาน"];
   Map<String,int> menu = {
     "ลาเต้": 55,
@@ -23,8 +23,8 @@ void main(){
   var price_menu = menu["ลาเต้"];
 
   // ราคา
-  double dis_price = calcTotal(55,1,10);
-  double normal_price = calcTotal(55,1,null);
+  double dis_price = calcTotal(price: 55,qty: 2,discount: 10);
+  double normal_price = calcTotal(price: 55,qty: 2);
 
 
   // null

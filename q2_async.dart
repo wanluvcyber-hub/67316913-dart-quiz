@@ -1,5 +1,6 @@
 import 'dart:html_common';
 
+// 2.1
 abstract class MenuItem{
   String name;
   double basePrice;
@@ -11,16 +12,22 @@ abstract class MenuItem{
   }
 }
 
+// 2.2 and 2.3
 class Drink extends MenuItem{
   int toppings;
   Drink(String name,DocsEditable basePrice,this.toppings):super(name,basePrice);
   @override
+  // เขียนทับ price ให้มาเป็นของตัวเอง
   double price(){
     return basePrice + (10*toppings);
   }
 }
 
-class Food extends MenuItem{
-  double size;
-  Food()
+// class Food extends MenuItem{
+//   double size;
+//   Food()
+// }
+
+void main(){
+  
 }
